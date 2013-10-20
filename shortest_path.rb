@@ -94,11 +94,14 @@ def shortestPath(adjList)
     path.unshift(current)
 
     # Follow the predecessor chain until you reach the first node.
+    # Add each predecessor to the path.
     until current == first
         current = bfsTree[current].predecessor
         path.unshift(current)
     end
 
+    # Return the path as a string joined by dashes, as directed in the challenge
+    # instructions.
     return path.join("-")
 end
 
